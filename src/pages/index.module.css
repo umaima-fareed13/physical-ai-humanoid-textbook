@@ -1,23 +1,362 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Homepage Styles - Split Hero with Neon Glow
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.main {
+  min-height: calc(100vh - 60px);
+  background: var(--ifm-background-color);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+/* ============================================
+   Hero Section - Split Layout
+   ============================================ */
+.hero {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(0, 242, 255, 0.06) 0%, transparent 50%),
+    var(--ifm-background-color);
 }
 
-.buttons {
+.heroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Left Side - Content */
+.heroContent {
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(0, 242, 255, 0.1);
+  border: 1px solid rgba(0, 242, 255, 0.3);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #00f2ff;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  color: var(--hero-title-color, #ffffff);
+  letter-spacing: -0.03em;
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #00f2ff 0%, #00b8d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--hero-subtitle-color, rgba(255, 255, 255, 0.7));
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+/* ============================================
+   Light Mode - Professional Aesthetic
+   ============================================ */
+
+/* Hero background gradient */
+:global([data-theme='light']) .hero {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Heading - Deep Navy with modern letter-spacing */
+:global([data-theme='light']) .heroTitle {
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+/* Subtitle - Slate Gray with increased line-height */
+:global([data-theme='light']) .heroSubtitle {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Badge - Refined accent */
+:global([data-theme='light']) .badge {
+  background: rgba(6, 182, 212, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #0891b2;
+}
+
+/* Title Accent - Cyan to Blue gradient text */
+:global([data-theme='light']) .titleAccent {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Primary Button - Start Learning */
+:global([data-theme='light']) .primaryButton {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  border: none;
+}
+
+:global([data-theme='light']) .primaryButton:hover {
+  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button - View Roadmap (Ghost Style) */
+:global([data-theme='light']) .secondaryButton {
+  background: transparent;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+:global([data-theme='light']) .secondaryButton:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #334155;
+}
+
+/* Glow Visual - Subtle watermark effect (0.3 opacity) */
+:global([data-theme='light']) .heroVisual {
+  opacity: 0.9;
+}
+
+:global([data-theme='light']) .glowCircle {
+  border-color: rgba(59, 130, 246, 0.15);
+  box-shadow:
+    0 0 40px rgba(6, 182, 212, 0.1),
+    inset 0 0 40px rgba(59, 130, 246, 0.05);
+  opacity: 0.3;
+}
+
+:global([data-theme='light']) .glowCircleInner {
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow:
+    0 0 30px rgba(6, 182, 212, 0.12),
+    inset 0 0 30px rgba(59, 130, 246, 0.06);
+  opacity: 0.3;
+}
+
+:global([data-theme='light']) .glowCore {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  box-shadow: 0 0 50px rgba(59, 130, 246, 0.15);
+  opacity: 0.3;
+}
+
+/* CTA Buttons */
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: #00f2ff;
+  color: #0f172a;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(0, 242, 255, 0.3);
+}
+
+.primaryButton:hover {
+  background: #3ff5ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 242, 255, 0.4);
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: #00f2ff;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid rgba(0, 242, 255, 0.5);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(0, 242, 255, 0.1);
+  border-color: #00f2ff;
+  color: #00f2ff;
+  text-decoration: none;
+}
+
+/* Right Side - Neon Glow Visual */
+.heroVisual {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 400px;
+}
+
+.glowContainer {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glowCircle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(0, 242, 255, 0.3);
+  box-shadow:
+    0 0 60px rgba(0, 242, 255, 0.2),
+    inset 0 0 60px rgba(0, 242, 255, 0.1);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.glowCircleInner {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(0, 242, 255, 0.4);
+  box-shadow:
+    0 0 40px rgba(0, 242, 255, 0.3),
+    inset 0 0 40px rgba(0, 242, 255, 0.15);
+  animation: pulse 4s ease-in-out infinite 0.5s;
+}
+
+.glowCore {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.4) 0%, rgba(0, 242, 255, 0.1) 50%, transparent 70%);
+  box-shadow: 0 0 80px rgba(0, 242, 255, 0.5);
+  animation: corePulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes corePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 80px rgba(0, 242, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 100px rgba(0, 242, 255, 0.7);
+  }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media screen and (max-width: 996px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .heroContent {
+    order: 1;
+  }
+
+  .heroVisual {
+    order: 2;
+    height: 300px;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroCta {
+    justify-content: center;
+  }
+
+  .glowContainer {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroCta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .glowContainer {
+    width: 200px;
+    height: 200px;
+  }
 }

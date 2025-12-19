@@ -1,47 +1,80 @@
 ---
 sidebar_position: 1
+slug: /intro
+title: Introduction
 ---
 
-# Tutorial Intro
+# Physical AI Textbook
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to the **Physical AI Textbook** - a comprehensive open-source curriculum for mastering humanoid robotics with ROS 2, simulation, and AI.
+
+## What is Physical AI?
+
+Physical AI refers to artificial intelligence systems that interact with the physical world through embodied agents - robots that can perceive, reason, and act in real environments. Unlike purely digital AI, Physical AI must handle:
+
+- **Real-time constraints** - Decisions must be made in milliseconds
+- **Uncertainty** - Sensor noise, model errors, and unexpected obstacles
+- **Safety** - Actions have real-world consequences
+- **Physics** - Gravity, friction, and dynamics affect every movement
+
+## Course Overview
+
+This textbook is organized into four modules:
+
+### Module I: The Robotic Nervous System
+
+Build the foundational infrastructure that makes humanoid robots possible.
+
+| Chapter | Topic | Key Concepts |
+|---------|-------|--------------|
+| 1 | ROS 2 Foundations | Nodes, topics, services, actions |
+| 2 | URDF & Robot Modeling | Links, joints, physics properties |
+| 3 | Motion Control | PID, trajectory planning, ros2_control |
+| 4 | Simulation | Isaac Sim, digital twins, sim-to-real |
+
+### Module II: Intelligence & Learning (Coming Soon)
+
+Add perception, planning, and learning capabilities to your robots.
+
+### Module III: Advanced Capabilities (Coming Soon)
+
+Master manipulation, locomotion, and human-robot interaction.
+
+### Module IV: Deployment & Scale (Coming Soon)
+
+Deploy robots in production with safety, monitoring, and fleet management.
+
+## Prerequisites
+
+To get the most from this textbook, you should have:
+
+- **Programming**: Familiarity with Python and basic C++
+- **Linux**: Comfort with command-line operations
+- **Math**: Linear algebra and calculus fundamentals
+- **No robotics experience required** - We start from the basics
 
 ## Getting Started
 
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+Ready to begin? Start with [Chapter 1: ROS 2 Foundations](/docs/chapter-1-ros2-urdf-introduction) to learn the communication backbone of modern robotics.
 
 ```bash
-npm init docusaurus@latest my-website classic
+# Example: Your first ROS 2 command
+ros2 topic list
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Development Environment
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+We recommend the following setup:
 
-## Start your site
+- **OS**: Ubuntu 22.04 LTS
+- **ROS**: ROS 2 Humble
+- **Simulation**: NVIDIA Isaac Sim 2023.1+
+- **GPU**: NVIDIA RTX series (for simulation)
 
-Run the development server:
+## Contributing
 
-```bash
-cd my-website
-npm run start
-```
+This is an open-source curriculum. Contributions, corrections, and improvements are welcome on [GitHub](https://github.com/hackathon-physical-ai/humanoid-textbook).
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+---
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Let's build the future of robotics together.

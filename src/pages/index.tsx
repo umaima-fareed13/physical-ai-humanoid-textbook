@@ -1,43 +1,55 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
+import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function HeroSection() {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+    <section className={styles.hero}>
+      <div className={styles.heroContainer}>
+        {/* Left Side - Content */}
+        <div className={styles.heroContent}>
+          <span className={styles.badge}>Open Source Curriculum</span>
+          <h1 className={styles.heroTitle}>
+            Physical AI<br />
+            <span className={styles.titleAccent}>Mastery</span>
+          </h1>
+          <p className={styles.heroSubtitle}>
+            Master humanoid robotics from the ground up. Learn ROS 2,
+            simulation, motion control, and AI—everything you need to
+            build intelligent robots that interact with the physical world.
+          </p>
+          <div className={styles.heroCta}>
+            <Link to="/docs/intro" className={styles.primaryButton}>
+              Start Learning
+            </Link>
+            <Link to="/docs/chapter-1-ros2-urdf-introduction" className={styles.secondaryButton}>
+              View Roadmap
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Side - Neon Glow Visual */}
+        <div className={styles.heroVisual}>
+          <div className={styles.glowContainer}>
+            <div className={styles.glowCircle} />
+            <div className={styles.glowCircleInner} />
+            <div className={styles.glowCore} />
+          </div>
         </div>
       </div>
-    </header>
+    </section>
   );
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title="Physical AI Mastery"
+      description="Master humanoid robotics with ROS 2, simulation, and AI. Open-source curriculum for building intelligent robots.">
+      <main className={styles.main}>
+        <HeroSection />
       </main>
     </Layout>
   );
