@@ -8,12 +8,13 @@ const config: Config = {
   favicon: 'img/robot-icon.webp',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-textbook.example.com',
-  baseUrl: '/',
+  url: 'https://umaima-fareed13.github.io',
+  baseUrl: '/physical-ai-humanoid-textbook/',
 
   // GitHub pages deployment config
-  organizationName: 'hackathon-physical-ai',
-  projectName: 'humanoid-textbook',
+  organizationName: 'umaima-fareed13',
+  projectName: 'physical-ai-humanoid-textbook',
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
 
