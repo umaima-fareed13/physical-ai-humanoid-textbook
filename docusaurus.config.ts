@@ -81,7 +81,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/hackathon-physical-ai/humanoid-textbook',
+          href: 'https://github.com/umaima-fareed13/physical-ai-humanoid-textbook',
           label: 'GitHub',
           position: 'right',
         },
