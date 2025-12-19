@@ -134,7 +134,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/hackathon-physical-ai/humanoid-textbook',
+              href: 'https://github.com/umaima-fareed13/physical-ai-humanoid-textbook',
             },
             {
               label: 'NVIDIA Omniverse',
